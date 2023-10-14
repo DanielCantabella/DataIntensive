@@ -25,7 +25,6 @@ def checkIfExistsInHDFS(HDFSpath):
     :return: True if the path already exists in HDFS, False if not.
     '''
     host, port, user = get_server_data(CONFIG_ROUTE)
-    # Set up the HDFS client
     client = InsecureClient("http://" + host + ":" + port + "/", user=user)
     if client.status(HDFSpath, strict=False):
         return True
@@ -41,7 +40,7 @@ def sendToHdfs(filePath, hdfsPath, n_threads: int = 1):
     host, port, user = get_server_data(CONFIG_ROUTE)
     hdfs_client = InsecureClient("http://" + host + ":" + port + "/", user=user)
     hdfs_client.upload(hdfsPath, filePath, n_threads=n_threads)
-    print(f"File '{filePath}' has been uploaded to HDFS at '{hdfsPath}'")
+
 
 def uploadToHdfs(filePath, hdfsPath, n_threads: int = 1):
     '''
@@ -52,17 +51,30 @@ def uploadToHdfs(filePath, hdfsPath, n_threads: int = 1):
     :return:
     '''
     if not checkIfExistsInHDFS(hdfsPath):
+        print(f"File '{filePath}' already in HDFS at '{hdfsPath}'")
+    else:
         sendToHdfs(filePath, hdfsPath, n_threads=n_threads)
         print(f"File '{filePath}' uploaded in HDFS at '{hdfsPath}'")
-    else:
-        print(f"File '{filePath}' already in HDFS at '{hdfsPath}'")
+
 
 def deleteHdfsFolder(HDFSfolder):
     host, port, user = get_server_data(CONFIG_ROUTE)
-    # Set up the HDFS client
     client = InsecureClient("http://" + host + ":" + port + "/", user=user)
+
     if client.status(HDFSfolder, strict=False):
         client.delete(HDFSfolder, recursive=True)
         print(f"Folder {HDFSfolder} has been overwritten in HDFS")
     else:
         pass
+
+def createHdfsDirectory(hdfs_path):
+    try:
+        host, port, user = get_server_data(CONFIG_ROUTE)
+        client = InsecureClient("http://" + host + ":" + port + "/", user=user)
+        # Check if the directory already exists
+        if not client.status(hdfs_path, strict=False):
+            # If it doesn't exist, create the directory
+            client.makedirs(hdfs_path)
+        print(f"Directory '{hdfs_path}' created in HDFS.")
+    except Exception as e:
+        print(f"Error: {str(e)}")

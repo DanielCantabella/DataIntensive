@@ -9,8 +9,9 @@ from hdfsFunctions import *
 '''
 This script writes our raw data into our Hadoop server in HDFS.
 '''
-hdfs_path = "/rawFiles/"
+hdfs_path = "/rawFiles"
 deleteHdfsFolder(hdfs_path)
+createHdfsDirectory(hdfs_path)
 for i in os.listdir("./datasets"):
     uploadToHdfs("./datasets/"+str(i),hdfs_path)
 
