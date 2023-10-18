@@ -9,3 +9,12 @@ kaggle$csv$employee_counts$2023-10-18-13:12:07.827000$490871
 kaggle$csv$benefits$2023-10-18-13:12:08.766000$394783
 kaggle$csv$job_industries$2023-10-18-13:12:09.704000$331464
 kaggle$csv$job_skills$2023-10-18-13:12:10.632000$455791
+kaggle$csv$job_postings$2023-10-18-13:11:54.867000$9437184
+kaggle$csv$job_postings$2023-10-18-13:11:54.867000$9437184
+kaggle$csv$job_postings$2023-10-18-13:11:54.867000$9437184
+kaggle$csv$job_postings$2023-10-18-13:11:54.867000$9437184
+kaggle$csv$job_postings$2023-10-18-13:11:54.867000$9437184
+kaggle$csv$job_postings$2023-10-18-13:11:54.867000$9437184
+kaggle$csv$job_postings$2023-10-18-13:11:54.867000$7132041
+kaggle$csv$mtsamples$2023-10-18-13:10:59.483000$9437184
+kaggle$csv$mtsamples$2023-10-18-13:10:59.483000$7570052

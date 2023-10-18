@@ -3,6 +3,7 @@
 #jupyter toree install --spark_home=/usr/local/bin/apache-spark/
 #jupyter toree install --spark_opts='--master=local[4]'
 #brew install sbt
+#sbt clean compile
 
 #sudo su
 #echo "54.211.123.215 hadoop" >> /etc/hosts
