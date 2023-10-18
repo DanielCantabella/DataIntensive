@@ -13,6 +13,7 @@ hdfs_path = "/rawFiles"
 deleteHdfsFolder(hdfs_path)
 createHdfsDirectory(hdfs_path)
 for i in os.listdir("./datasets"):
+    print(f"Uploading {i} in HDFS...")
     uploadToHdfs("./datasets/"+str(i),hdfs_path)
 
 

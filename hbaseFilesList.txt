@@ -1,0 +1,11 @@
+kaggle$csv$bbc-news-data$2023-10-18-13:12:17.875000$5080260
+kaggle$csv$goodreads_data$2023-10-18-13:10:43.173000$9437184
+kaggle$csv$goodreads_data$2023-10-18-13:10:43.173000$2311647
+kaggle$DS_Store$$2023-10-18-13:11:00.321000$6148
+kaggle$csv$companies$2023-10-18-13:12:06.738000$5882607
+kaggle$csv$company_industries$2023-10-18-13:11:55.899000$439563
+kaggle$csv$company_specialities$2023-10-18-13:11:58.028000$3071450
+kaggle$csv$employee_counts$2023-10-18-13:12:07.827000$490871
+kaggle$csv$benefits$2023-10-18-13:12:08.766000$394783
+kaggle$csv$job_industries$2023-10-18-13:12:09.704000$331464
+kaggle$csv$job_skills$2023-10-18-13:12:10.632000$455791
