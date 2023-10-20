@@ -18,6 +18,7 @@ def get_server_data(cfgFileDirectory):
     port = config.get('hadoop_server', 'port')
     user = config.get('hadoop_server', 'user')
     return host, port, user
+
 def checkIfExistsInHDFS(HDFSpath):
     '''
     Check if a path/file exists in HDFS.
@@ -30,6 +31,7 @@ def checkIfExistsInHDFS(HDFSpath):
         return True
     else:
         return False
+
 def sendToHdfs(filePath, hdfsPath, n_threads: int = 1):
     '''
     Sends the file to HDFS.
@@ -58,6 +60,10 @@ def uploadToHdfs(filePath, hdfsPath, n_threads: int = 1):
 
 
 def deleteHdfsFolder(HDFSfolder):
+    '''
+    Deletes the HDFS folder if it exists
+    :param HDFSfolder: path to the folder to be deleted
+    '''
     host, port, user = get_server_data(CONFIG_ROUTE)
     client = InsecureClient("http://" + host + ":" + port + "/", user=user)
 
@@ -68,6 +74,10 @@ def deleteHdfsFolder(HDFSfolder):
         pass
 
 def createHdfsDirectory(hdfs_path):
+    '''
+    Tries to create a new hdfs folder
+    :param hdfs_path: path to the folder to be created
+    '''
     try:
         host, port, user = get_server_data(CONFIG_ROUTE)
         client = InsecureClient("http://" + host + ":" + port + "/", user=user)

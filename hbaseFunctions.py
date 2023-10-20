@@ -8,6 +8,7 @@ def create_table_if_not_exists(connection, table):
     if table.encode() not in connection.tables():
         connection.create_table(table, {'data': dict()})
         print(f"Table {table} has been created in HBase.")
+
 def uploadFilesInHbase(hdfs_client, hdfs_path, table, fileListPath):
     '''
     This function checks the hdfs directory and checks if it contains a file.
@@ -16,6 +17,7 @@ def uploadFilesInHbase(hdfs_client, hdfs_path, table, fileListPath):
     :param hdfs_client: HDFS client
     :param hdfs_path: root path from where you want to start uploading the files
     :param table: HBase table connection
+    :param fileListPath: file containing entries in HBase
     '''
     files = hdfs_client.list(hdfs_path)
     for entry in files:
@@ -44,6 +46,7 @@ def read_raw_and_insert_hbase(client, table, hdfs_path, fileListPath):
     :param client: HDFS client
     :param table: HBase table connection
     :param hdfs_path: HDFS path of the file
+    :param fileListPath: file containing entries in HBase
     '''
     # generate key
     source = "kaggle"
