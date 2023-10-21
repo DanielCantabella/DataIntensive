@@ -8,6 +8,7 @@ This part can bu seen in our [processing.ipynb](processing.ipynb) notebook.
 There are some requirements first to run each of the files.
 
 ### Architecture
+
 The architecture should be ready but sometimes the server fails and we need to reboot the system, so first of all:
 
 Be sure the server is running:
@@ -61,7 +62,7 @@ sbt cli:packArchive
 ./jupyter-scala
 ```
 
-You should be able to run the scripts now:
+You should be able to run the notebook now:
 Just run [this script](processing.ipynb).
 
  
