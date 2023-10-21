@@ -61,6 +61,8 @@ cd jupyter-scala
 sbt cli:packArchive
 ./jupyter-scala
 ```
+**_NOTE_**: Our processing code runs on local filesystem due to velocity reasons, but could be run by receiving and sending data from/to our ec2 architecture.
+We just commented some lines in order to allow the user to choose which option to use.
 
 You should be able to run the notebook now:
 Just run [this script](processing.ipynb).
